@@ -1,0 +1,365 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>程序员标配--使用hexo+github搭建个人博客 | 刘贵生的博客</title>
+  <meta name="author" content="刘贵生">
+  
+  <meta name="description" content="&amp;emsp;&amp;emsp;但是，github作为世界上最大的同性交友基地，它除了能为广大男性同胞带来灵魂上的快感，还有一个巨大的作用，那就是可以充当一个小型的服务器。
+&amp;emsp;&amp;emsp;使用gitlab搭建个人博客的好处非常多，比如：
+
+访问速度快，仓库里只需放打包好的静态页面
+构建快，代码push到远程仓库后，分分钟构建完
+免费（当然这是最大的好处）
+易于管理，这得益于github超强的代码管理能力，比如分支，版本回退等
+可以绑定自己的域名
+
+&amp;emsp;&amp;emsp;常见的博客生成工具有两种，一个是hexo,另一个是jekyll。两者其实大同小异，但是jekyll语法和配置相对于复杂，它需要ruby环境。而hexo就比较简单易上手，只需要node环境就ok了。下面我们进入正题，详细介绍如何使用hexo+github搭建个人博客。
+准备工作
+首先你得有一个github账号吧，注册过程这里不做过多介绍了。注册账号点这里
+配置node环境,根据系统下载好node安装包，一路下一步安装就ok了。node下载
+shell工具，这个可以自行选择，比如cmd，powerShell,git等，建议使用git
+如果你想要自己的域名，可以花钱去申请一个，一般点的域名也不是太贵，一年几十块钱，其实这点钱对于程序员也不算什么，少买件格子衫就有了。
+
+&amp;emsp;&amp;emsp;好了，基本的准备工作就这些了,下面真的要进入正题了。
+安装hexohexo需要全局安装，命令如下：
+npm install -g hexo">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="程序员标配--使用hexo+github搭建个人博客"/>
+  <meta property="og:site_name" content="刘贵生的博客"/>
+
+  
+    <meta property="og:image" content="statics/welcome-cover.jpg" />
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/update-style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-70812759-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?cb5448498d7169c668b07c2b255d62c1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">刘贵生的博客</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="">
+			  <i class=""></i>文章
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="">
+			  <i class=""></i>分类
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="">
+			  <i class=""></i>标签
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/galleries" title="">
+			  <i class=""></i>相册
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header">
+			<h1> 程序员标配--使用hexo+github搭建个人博客</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <p>&emsp;&emsp;但是，github作为世界上最大的同性交友基地，它除了能为广大男性同胞带来灵魂上的快感，还有一个巨大的作用，那就是可以充当一个小型的服务器。</p>
+<p>&emsp;&emsp;<strong>使用gitlab搭建个人博客的好处非常多，比如：</strong></p>
+<ol>
+<li>访问速度快，仓库里只需放打包好的静态页面</li>
+<li>构建快，代码push到远程仓库后，分分钟构建完</li>
+<li>免费（当然这是最大的好处）</li>
+<li>易于管理，这得益于github超强的代码管理能力，比如分支，版本回退等</li>
+<li>可以绑定自己的域名</li>
+</ol>
+<p>&emsp;&emsp;常见的博客生成工具有两种，一个是<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">hexo</a>,另一个是<a href="http://jekyllcn.com/" target="_blank" rel="noopener">jekyll</a>。两者其实大同小异，但是jekyll语法和配置相对于复杂，它需要ruby环境。而hexo就比较简单易上手，只需要node环境就ok了。下面我们进入正题，详细介绍如何使用hexo+github搭建个人博客。</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
+<li>首先你得有一个github账号吧，注册过程这里不做过多介绍了。<a href="https://github.com/join?source=header-home">注册账号点这里</a></li>
+<li>配置node环境,根据系统下载好node安装包，一路下一步安装就ok了。<a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">node下载</a></li>
+<li>shell工具，这个可以自行选择，比如cmd，powerShell,git等，建议使用<a href="https://git-scm.com/" target="_blank" rel="noopener">git</a></li>
+<li>如果你想要自己的域名，可以花钱去申请一个，一般点的域名也不是太贵，一年几十块钱，其实这点钱对于程序员也不算什么，少买件格子衫就有了。</li>
+</ol>
+<p>&emsp;&emsp;好了，基本的准备工作就这些了,下面真的要进入正题了。</p>
+<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>hexo需要全局安装，命令如下：</p>
+<p><code>npm install -g hexo</code></p>
+<p>linux和mac用户需要添加权限 </p>
+<p><code>sudo npm install -g hexo</code></p>
+	  
+	</div>
+
+	<div>
+  	<center>
+	<div class="pagination">
+
+    
+</div>
+
+    </center>
+	</div>
+	
+	<!-- comment -->
+	
+<section id="comment">
+    <h2 class="title">留言</h2>
+
+    
+</section>
+
+
+	
+		<section id="comments" class="comments">
+			<style>
+			.comments{padding:10px;background:#fff}
+			@media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#000}}
+			</style>
+			<div id="comment"></div>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+new Valine({
+    el: '#comment' ,
+    notify:true, 
+    verify:true, 
+    appId: 'ujj7HTnVMfHWWTTQXQ3wsoOB-gzGzoHsz',
+    appKey: '2EluivF387y5A1TdMfPDYEHf',
+    placeholder: 'ヾﾉ≧∀≦)o欢迎评论!',
+    path:window.location.pathname, 
+    avatar:'mm' 
+});
+</script>
+<script>
+    function loadJs(src, callback) {
+        const sc = document.createElement('script');
+        sc.type = 'text/javascript';
+        sc.src = src;
+        if (callback) {
+            if (document.addEventListener) {
+                sc.addEventListener("load", callback, false);
+            } else {
+                sc.onreadystatechange = function () {
+                    if (/loaded|complete/.test(sc.readyState)) {
+                        sc.onreadystatechange = null;
+                        callback();
+                    }
+                };
+            }
+        }
+        document.head.appendChild(sc);
+    }
+</script>
+<script>
+    document.body.addEventListener('click', function (e) {
+        if (e.target.classList.contains('vsubmit')) {
+            const email = document.querySelector('input[type=email]');
+            const nick = document.querySelector('input[name=nick]');
+            const reg = /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/; // 邮箱正则
+            if (email && (!email.value || !nick.value || !reg.test(email.value))) {
+                const str = `<div class="valert txt-center"><div class="vtext">请填写正确的昵称和邮箱！</div></div>`;
+                const vmark = document.querySelector('.vmark');
+                vmark.innerHTML = str;
+                vmark.style.display = 'block';
+
+                setTimeout(function () {
+                    vmark.style.display = 'none';
+                    vmark.innerHTML = '';
+                }, 2500);
+            } else {
+                // 使用server酱通知
+                const href = window.location.href;
+                const host = window.location.host;
+                // hexo主题yilia添加valine评论系统 文章被恶意刷屏，无需通知
+                if (href.indexOf('2018/04/05') === -1) {
+                    loadJs(`https://sc.ftqq.com/SCU94700Te32159dab60781a3c638c9ac6389adf55e9d5dec90aa9.send?text=${host}博客有人留言啦~&desp=文章地址是${href}`);
+                }
+            }
+        }
+    });
+</script>
+		</section>
+	
+	</div> <!-- col-md-9/col-md-12 -->
+		
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2020-01-09 
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/个人博客/">个人博客<span>1</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/hexo/">hexo<span>1</span></a></li> <li><a href="/tags/github/">github<span>1</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
+		
+
+</div><!-- row -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2020 刘贵生
+  
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a>,<a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>,<a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a> and <a href="http://getbootstrap.com/" target="_blank">BOOTSTRA.386</a>. 
+     <br> Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind.386</a>.    
+</p>
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

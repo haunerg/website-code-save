@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>程序员标配--使用hexo+github搭建个人博客</title>
+      <link href="/2020/01/09/%E7%A8%8B%E5%BA%8F%E5%91%98%E6%A0%87%E9%85%8D-%E4%BD%BF%E7%94%A8hexo-github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
+      <url>/2020/01/09/%E7%A8%8B%E5%BA%8F%E5%91%98%E6%A0%87%E9%85%8D-%E4%BD%BF%E7%94%A8hexo-github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
+      
+        <content type="html"><![CDATA[<p>&emsp;&emsp;但是，github作为世界上最大的同性交友基地，它除了能为广大男性同胞带来灵魂上的快感，还有一个巨大的作用，那就是可以充当一个小型的服务器。</p><p>&emsp;&emsp;<strong>使用gitlab搭建个人博客的好处非常多，比如：</strong></p><ol><li>访问速度快，仓库里只需放打包好的静态页面</li><li>构建快，代码push到远程仓库后，分分钟构建完</li><li>免费（当然这是最大的好处）</li><li>易于管理，这得益于github超强的代码管理能力，比如分支，版本回退等</li><li>可以绑定自己的域名</li></ol><p>&emsp;&emsp;常见的博客生成工具有两种，一个是<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">hexo</a>,另一个是<a href="http://jekyllcn.com/" target="_blank" rel="noopener">jekyll</a>。两者其实大同小异，但是jekyll语法和配置相对于复杂，它需要ruby环境。而hexo就比较简单易上手，只需要node环境就ok了。下面我们进入正题，详细介绍如何使用hexo+github搭建个人博客。</p><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol><li>首先你得有一个github账号吧，注册过程这里不做过多介绍了。<a href="https://github.com/join?source=header-home">注册账号点这里</a></li><li>配置node环境,根据系统下载好node安装包，一路下一步安装就ok了。<a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">node下载</a></li><li>shell工具，这个可以自行选择，比如cmd，powerShell,git等，建议使用<a href="https://git-scm.com/" target="_blank" rel="noopener">git</a></li><li>如果你想要自己的域名，可以花钱去申请一个，一般点的域名也不是太贵，一年几十块钱，其实这点钱对于程序员也不算什么，少买件格子衫就有了。</li></ol><p>&emsp;&emsp;好了，基本的准备工作就这些了,下面真的要进入正题了。</p><h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>hexo需要全局安装，命令如下：</p><p><code>npm install -g hexo</code></p><p>linux和mac用户需要添加权限 </p><p><code>sudo npm install -g hexo</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 个人博客 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> github </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
