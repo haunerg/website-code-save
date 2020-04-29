@@ -184,15 +184,62 @@ hexo new '博客名称'
 ```
 完成后hexo会在【source】中的【_posts】文件生成一个```mardown```文件，在里边编辑博客就可以了
 
-mardown文件头部属性说明
+mardown文件头部可以添加的属性说明
 
-    - title-------博客名称
-    - date--------发布日期
-    - categories--分类
-    - tags--------标签
-    - preview-----列表页最多展示多少个文字
+    - title----------博客名称
+    - date-----------发布日期
+    - categories-----分类
+    - tags-----------标签
+    - preview--------列表页最多展示多少个文字
+
+如果你想修改默模板可以去【scaffolds】文件夹下修改```post.md```文件
+
+# 添加标签页和分类页面
+
+#### (1)标签页
+命令行输入
+```
+hexo new page "tags"
+```
+这是hexo会在【soruce】文件夹下生成一个【tags】文件夹，修改该文件夹下的```index.md```,替换里边的内容为
+```
+---
+title: tags
+date: 2020-04-28 17:15:54
+type: "tags" 
+layout: "tags" 
+---
+
+```
+然后修改【theme】文件夹下的```_config.yml```的menu,添加如下配置
+
+![image](https://img-blog.csdnimg.cn/2020042918543177.png)
+
+重新打包部署即可
 
 
+#### (2)分类页面
+分类页面和标签页类似，命令行输入
+```
+hexo new page "categories"
+```
+这是hexo会在【soruce】文件夹下生成一个【tags】文件夹，修改该文件夹下的```index.md```,替换里边的内容为
+```
+---
+title: categories
+date: 2020-04-28 16:46:27
+type: "categories"
+layout: "categories"
+comments: false
+---
+
+
+```
+然后修改【theme】文件夹下的```_config.yml```的menu,添加如下配置
+
+![image](https://img-blog.csdnimg.cn/20200429185756736.png)
+
+重新打包部署即可
 
 
 
