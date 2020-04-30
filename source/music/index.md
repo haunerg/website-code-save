@@ -1,4 +1,5 @@
 ---
+icon: fa fa-music
 title: 网易云歌单
 date: 2020-04-30 18:05:29
 layout: page
