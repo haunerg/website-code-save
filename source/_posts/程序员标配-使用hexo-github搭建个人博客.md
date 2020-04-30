@@ -6,6 +6,7 @@ tags:
  - hexo
  - github
 preview: 200
+toc: true
 ---
 &emsp;&emsp;作为一名合格的程序员，拥有一个自己的个人网站，那想必是非常舒服了。我们可以在里边写写技术博客，发发牢骚，记录自己的生活。当然，我们可以
 在博客园，掘金的博客网站发表，但是那毕竟是人家的东西，我们应该试着搭建一个自己的博客。但是，做网站就要买服务器，买服务器就要花钱，这对于我们这帮屌丝
@@ -91,6 +92,7 @@ hexo有一个主题库[地址](https://hexo.io/themes/),这里的主题应有，
 git clone git@github.com:blackshow/hexo-theme-freemind.386.git themes/freemind.385
 ```
 更改项目目录下```_config.yml```配置文件中的```theme```属性的值为```freemind.386```。注意不是主题文件中的```_config.yml```
+（再次注意，有的的主题是需要下载依赖的，具体看clone的主题目录有没有```package.json```,如果有，需要切换到主题目录执行```npm install```下载依赖包）;
 然后重新打包，启动服务，
 ```
 hexo g
@@ -100,6 +102,7 @@ hexo s
 ```
 hexo s -g
 ```
+
 到此为止，主题就更换完了
 
 # 部署
@@ -155,8 +158,9 @@ hexo d
 ![image](https://img-blog.csdnimg.cn/20200429175657132.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70)
 
 
+
 # 关联域名
-毕竟上边那种github的地址不容易被人记住，如果有一个自己的地址就再好不过了。其实买个普通的也就几十块钱，少```洗一次脚```能买好几个。我实在腾讯云买的，一年21块大洋。[购买传送门](https://dnspod.cloud.tencent.com/)
+毕竟上边那种github的地址不容易被人记住，如果有一个自己的地址就再好不过了。其实买个普通的也就几十块钱，少```洗一次脚```能买好几个。我是在腾讯云买的，一年21块大洋。[购买传送门](https://dnspod.cloud.tencent.com/)
 
 完成支付之后，进入控制台，绑定域名之前需要```邮箱验证```和```实名认证```，用不多长时间，几分钟搞定。然后点击进行解析域名，操作路径为【我的域名】-->【解析】
 
@@ -184,15 +188,36 @@ hexo new '博客名称'
 ```
 完成后hexo会在【source】中的【_posts】文件生成一个```mardown```文件，在里边编辑博客就可以了
 
-mardown文件头部可以添加的属性说明
+mardown文件头部部分可以添加的属性说明
 
     - title----------博客名称
     - date-----------发布日期
     - categories-----分类
     - tags-----------标签
     - preview--------列表页最多展示多少个文字
+    - toc------------是否添加目录结构
 
 如果你想修改默模板可以去【scaffolds】文件夹下修改```post.md```文件
+
+# hexo 命令汇总
+#### (1)基本命令
+
+描述 | 命令 | 缩写
+--- | --- | --- 
+生成静态页面 | hexo generate | hexo g
+开启服务 | hexo server | hexo s
+部署到github | hexo deploy | hexo d
+新建文章 | hexo new "articleName" | -
+新建页面 | hexo new page "htmlName" | -
+查看帮助 | hexo help | - 
+查看hexo版本号 | hexo version
+
+#### (2)组合命令
+描述 | 命令 |
+--- | --- |  
+生成页面并预览 | hexo s -g | 
+生成页面并上传到github | hexo d -g | 
+
 
 # 添加标签页和分类页面
 
@@ -241,30 +266,102 @@ comments: false
 
 重新打包部署即可
 
+# 添加评论插件
+网上的评论插件很多，但是最终我选择了```valine```, valine有一个自己的评论管理后台```leancloud```,每次读者在博客的评论都会流入leancloud后台。
+但是，```freemind.386```这个主题没有集成valine,后来从网上找了方法，改造了一下主题，如果其他主题没有集成valine,也可以用下边的方法。
+
+具体方法是在主题目录的【layout】-->【_partial】-->【post】文件夹下新建```valine.ejs```文件，里边填写如下代码
+```
+<div id="comment"></div>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+new Valine({
+    el: '#comment' ,
+    notify:true, 
+    verify:true, 
+    appId: '<%=theme.valine.appId%>',
+    appKey: '<%=theme.valine.appKey%>',
+    placeholder: '<%=theme.valine.appKey%>',
+    path:window.location.pathname, 
+    avatar:'mm' 
+});
+</script>
+```
+
+然后在主题目录的【layout】-->【_partial】的```article.ejs```文件中找到
+
+```
+	<%- partial('post/comment', {page: item}) %>
+```
+这行代码下面填写
+
+```
+<% if (theme.valine && theme.valine.appId && theme.valine.appKey){ %>
+		<section id="comments" class="comments">
+			<style>
+			.comments{padding:10px;background:#fff}
+			@media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#000}}
+			</style>
+			<%- partial('post/valine', {
+			key: post.slug,
+			title: post.title,
+			url: config.url+url_for(post.path)
+			}) %>
+		</section>
+	<% } %>
+```
+我把修改好的主题上传到我的github中，可以自行clone到【themes】文件夹下， [传送门](https://github.com/qisi007/hexo-theme-freemind.386.second)。
+
+
+上述工作完成后我们看看怎么添加valine评论插件。 
+
+首先去leancloud官网注册账号[传送门](https://leancloud.cn/)。注册完成之后进个人管理页面```添加应用```,输入应用名称，下边选开发板
+
+![image](https://img-blog.csdnimg.cn/20200430114031590.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70)
+
+点击设置按钮
+
+![image](https://img-blog.csdnimg.cn/20200430114551854.png)
+
+
+点击左边【存储】-->【创建class】,新建两个类用来存储评论，分别是```Comment```和```Counter```
+
+然后点击左边【设置】-->【安全中心】把没用的服务都关掉
+
+![image](https://img-blog.csdnimg.cn/20200430114909833.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70)
+
+然后点击【应用Keys】记录下```AppID```和```AppKey```,这两个是需要配置到项目中的
+
+最后在主题文件夹的```_config.yml```配置文件中添加如下代码，把```AppID```和```AppKey```添加到对应位置
+
+```
+valine:
+  enable: true # 是否开启
+  appId:    # 上一步获取的 App ID
+  appKey:   # 上一步获取的 App Key
+  notify: true # 新留言是否需要通知 https://github.com/xCss/Valine/wiki
+  verify: true # 是否需要验证，验证比较反人类建议false关闭
+  placeholder: 请在此输入您的留言 # 默认留言框内的文字
+  avatar: mm # 默认头像
+  guest_info: nick,mail # 默认留言框的头部需要访问者输入的信息
+  pageSize: 10 # pagination size #默认单页的留言条数
+```
+
+最后执行```hexo d -g```打包部署，访问域名应该就可以了
+
+![image](https://img-blog.csdnimg.cn/20200430115425744.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70)
 
 
 
+好了，到现在可以拿着自己的网站出去装逼了，其实还有很多功能，只不过我现在没有研究，比如```相册```，```音乐播放器```等，等我以后有时间弄出来之后再分享给大家，我把我搭建的博客代码仓库地址也上传到了我的github中[传送门](https://github.com/qisi007/website-code-save)；
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+最后感谢下边博客的博主提供的帮助，小心心送上❤❤；
 
 感谢:
 
 [三分钟在GitHub上搭建个人博客](https://zhuanlan.zhihu.com/p/28321740)
+
+[使用hexo+github搭建免费个人博客详细教程](https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html)
+
 
 
