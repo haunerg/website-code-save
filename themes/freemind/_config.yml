@@ -1,0 +1,75 @@
+slogan: "People with dreams should not be laughed at."
+
+show_heart: true
+
+show_slogan: true
+
+menu:
+  - title: 文章
+    url: archives
+
+  - title: 分类
+    url: categories
+
+  - title: 标签
+    url: tags
+  
+  # - title: 相册
+  #   url: galleries
+  
+  #   icon: "fa fa-archive"
+  # - title: Categories
+  #   url: categories
+  #   intro: "All the categories."
+  #   # icon: "fa fa-folder"
+  # - title: Tags
+  #   url: tags
+  #   intro: "All the tags."
+  #   # icon: "fa fa-tags"
+  # - title: About
+  #   url: about
+  #   intro: "About me."
+  #   # icon: "fa fa-user"
+
+links:
+  - title: "My Github"
+    url: https://github.com/qisi007
+    icon: "fa fa-github"
+
+  - title: "博客园"
+    url: https://www.cnblogs.com/qisi007/
+    icon: "fa fa-user"
+
+widgets:
+- search
+- category
+- tagcloud
+- recent_posts
+- links
+
+rss: 
+fancybox: true
+favicon: favicon.png
+duoshuo_shortname:
+
+
+# Analytics (change to yours)
+google_analytics:
+  enable: true
+  siteid: UA-70812759-1
+baidu_tongji:
+  enable: true
+  siteid: cb5448498d7169c668b07c2b255d62c1
+
+# search
+#swiftype_key: ZP2ZSuHgipSZfRyU8uTR
+valine:
+  enable: true # 是否开启
+  appId: ujj7HTnVMfHWWTTQXQ3wsoOB-gzGzoHsz   # 上一步获取的 App ID
+  appKey: 2EluivF387y5A1TdMfPDYEHf  # 上一步获取的 App Key
+  notify: true # 新留言是否需要通知 https://github.com/xCss/Valine/wiki
+  verify: true # 是否需要验证，验证比较反人类建议false关闭
+  placeholder: 请在此输入您的留言 # 默认留言框内的文字
+  avatar: mm # 默认头像
+  guest_info: nick,mail # 默认留言框的头部需要访问者输入的信息
+  pageSize: 10 # pagination size #默认单页的留言条数
