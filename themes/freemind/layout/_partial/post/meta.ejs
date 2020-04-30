@@ -29,7 +29,7 @@
 	<% } %>	
 
 	<!-- toc -->
-	<div class="meta-widget">
+	<div class="meta-widget" id="toc-wrap">
 	<% if(item.toc){ %>
 	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
 	   <div id="toc" class="toc collapse in">
@@ -42,3 +42,24 @@
     <hr>
 	
 </div><!-- col-md-3 -->
+<script>
+	let mate = document.querySelector('#toc-wrap');
+	let flag = true;
+	let setClass = function () {
+		let scrollHeight = document.documentElement.scrollTop
+		let offsetTop = mate.offsetTop;
+		(offsetTop - scrollHeight < 0) ? mate.classList.add('toc-fixed') : mate.classList.remove('toc-fixed');
+	}
+	document.addEventListener('scroll', setClass)	
+	
+</script>
+
+<style>
+	.toc-fixed {
+		position: fixed;
+		top: 150px;
+		width: auto;
+		transition: all .5s;
+		z-index: 999;
+	}
+</style>
