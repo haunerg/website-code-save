@@ -16,3 +16,5 @@
 生成页面并预览 | hexo s -g | 
 生成页面并上传到github | hexo d -g | 
 
+
+图标更换地址： https://www.bootcss.com/p/font-awesome/#

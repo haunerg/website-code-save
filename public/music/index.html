@@ -6,13 +6,15 @@
   <meta http-equiv="cache-control" content="no-cache">
   <meta http-equiv="expires" content="0">
   
-  <title>github | 刘贵生的博客</title>
+  <title>网易云歌单 | 刘贵生的博客</title>
   <meta name="author" content="刘贵生">
+  
+  <meta name="description" content="">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="网易云歌单"/>
   <meta property="og:site_name" content="刘贵生的博客"/>
 
   
@@ -113,112 +115,119 @@ var _hmt = _hmt || [];
   <div class="container">
   	<div class="content">
     	 
+	
+		<div class="page-header">
+			<h1> 网易云歌单</h1>
+		</div>
+	
 
-<!-- title -->
-<div class="page-header">
-  <h1 class="archive-title-tag"><i class="fa fa-archive"></i> github</h1>
-</div>
+
 
 <div class="row page">
-  <!-- cols -->
-  
-  <div class="col-md-9">
+	<!-- cols -->
+	
+	<div class="col-md-12">
 	
 
-	  <div id="top_search"></div>
+	<!-- content -->
+	<div class="mypage">		
+	  		
 
-	  <div class="archive">
-		
-		
-		
-			
-			
-			<h4 class="archive-ul" data-toggle="collapse" data-target="#2020">2020<b class="caret"></b></h4>
-			<ul id="2020" class="collapse in">
-			
-		
-		<li class="listing-item">
-		<span class="date_class"> 2020-01-09 </span> &raquo;
-		
-		   <span class="title"><a href="/2020/01/09/程序员标配-使用hexo-github搭建个人博客/" >程序员标配--使用hexo+github搭建个人博客</a></span>
-		
-		</li>			
-		
-		</ul>
-		</div>
+	  <html>
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" style="width:600px;height:700px;margin-left:50%;transform:translate(-300px);" src="//music.163.com/outchain/player?type=0&id=2050354045&auto=1&height=430"></iframe>
+</html>
 
-</div> <!-- col-md-9/col-md-12 -->
-
-
-<div class="col-md-3">
-	<div id="sidebar">
-	
-			
-  <div id="site_search">
-   <div class="form-group">
-    <input type="text" id="local-search-input" name="q" results="0" placeholder="搜索" class="st-search-input st-default-search-input form-control"/>
-   </div>  
-  <div id="local-search-result"></div>
-  </div>
-
-
-		
-			
-	<div class="widget">
-		<h4>分类</h4>
-		<ul class="tag_box inline list-unstyled">
-		
-			<li><a href="/categories/个人博客/">个人博客<span>1</span></a></li>
-		
-		</ul>
+	  
 	</div>
 
-		
-			
-	<div class="widget">
-		<h4>标签云</h4>
-		<ul class="tag_box inline list-unstyled">		
-		
-			<li><a href="/tags/github/">github<span>1</span></a></li>
-		
-			<li><a href="/tags/hexo/">hexo<span>1</span></a></li>
-		
-		 
-		</ul>
+	<div>
+  	<center>
+	<div class="pagination">
+
+    
+</div>
+
+    </center>
 	</div>
-
-
-		
-			
-<div class="widget">
-  <h4>最新文章</h4>
-  <ul class="entry list-unstyled">
-    
-      <li>
-        <a href="/2020/01/09/程序员标配-使用hexo-github搭建个人博客/" ><i class="fa fa-file-o"></i>程序员标配--使用hexo+github搭建个人博客</a>
-      </li>
-    
-  </ul>
-</div>
-
-		
-			
-<div class="widget">
-	<h4>链接</h4>
-	<ul class="blogroll list-unstyled">
 	
-		<li><i class="fa fa-github"></i><a href="https://github.com/qisi007" title="" target="_blank"]);">My Github</a></li>
+	<!-- comment -->
 	
-		<li><i class="fa fa-user"></i><a href="https://www.cnblogs.com/qisi007/" title="" target="_blank"]);">博客园</a></li>
+
 	
-	</ul>
-</div>
+		<section id="comments" class="comments">
+			<style>
+			.comments{padding:10px;background:#fff}
+			@media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#000}}
+			</style>
+			<div id="comment"></div>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+new Valine({
+    el: '#comment' ,
+    notify:true, 
+    verify:true, 
+    appId: 'ujj7HTnVMfHWWTTQXQ3wsoOB-gzGzoHsz',
+    appKey: '2EluivF387y5A1TdMfPDYEHf',
+    placeholder: '留个联系方式再走呗，你若不勇敢，你怎么知道咱们合不合适？',
+    path:window.location.pathname, 
+    avatar:'mm' 
+});
+</script>
+<script>
+    function loadJs(src, callback) {
+        const sc = document.createElement('script');
+        sc.type = 'text/javascript';
+        sc.src = src;
+        if (callback) {
+            if (document.addEventListener) {
+                sc.addEventListener("load", callback, false);
+            } else {
+                sc.onreadystatechange = function () {
+                    if (/loaded|complete/.test(sc.readyState)) {
+                        sc.onreadystatechange = null;
+                        callback();
+                    }
+                };
+            }
+        }
+        document.head.appendChild(sc);
+    }
+</script>
+<script>
+    document.body.addEventListener('click', function (e) {
+        if (e.target.classList.contains('vsubmit')) {
+            const email = document.querySelector('input[type=email]');
+            const nick = document.querySelector('input[name=nick]');
+            const reg = /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/; // 邮箱正则
+            if (email && (!email.value || !nick.value || !reg.test(email.value))) {
+                const str = `<div class="valert txt-center"><div class="vtext">请填写正确的昵称和邮箱！</div></div>`;
+                const vmark = document.querySelector('.vmark');
+                vmark.innerHTML = str;
+                vmark.style.display = 'block';
 
-
+                setTimeout(function () {
+                    vmark.style.display = 'none';
+                    vmark.innerHTML = '';
+                }, 2500);
+            } else {
+                // 使用server酱通知
+                const href = window.location.href;
+                const host = window.location.host;
+                // hexo主题yilia添加valine评论系统 文章被恶意刷屏，无需通知
+                if (href.indexOf('2018/04/05') === -1) {
+                    loadJs(`https://sc.ftqq.com/SCU94700Te32159dab60781a3c638c9ac6389adf55e9d5dec90aa9.send?text=${host}博客有人留言啦~&desp=文章地址是${href}`);
+                }
+            }
+        }
+    });
+</script>
+		</section>
+	
+	</div> <!-- col-md-9/col-md-12 -->
 		
-	</div> <!-- sidebar -->
-</div> <!-- col-md-3 -->
+		
 
+</div><!-- row -->
 
 
 

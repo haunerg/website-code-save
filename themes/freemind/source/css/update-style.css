@@ -2,3 +2,8 @@
     height: 40px!important;
     padding-top: 10px;
 }
+#local-search-input {
+    height: 45px;
+    padding-left: 15px;
+    line-height: 40px;
+}

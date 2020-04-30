@@ -112,6 +112,18 @@ var _hmt = _hmt || [];
 			</a>
 		  </li>
 		  
+		  <li>
+			<a href="/music" title="">
+			  <i class=""></i>歌单
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="">
+			  <i class=""></i>关于我
+			</a>
+		  </li>
+		  
 		</ul>
       </div>
     </div> <!-- container -->
@@ -142,7 +154,7 @@ var _hmt = _hmt || [];
 	<div class="mypage">		
 	  		
 
-	  <p>&emsp;&emsp;作为一名合格的程序员，拥有一个自己的个人网站，那想必是非常舒服了。我们可以在里边写写技术博客，发发牢骚，记录自己的生活。当然，我们可以<br>在博客园，掘金的博客网站发表，但是那毕竟是人家的东西，我们应该试着搭建一个自己的博客。但是，做网站就要买服务器，买服务器就要花钱，这对于我们这帮屌丝<br>程序员来说当然是不太友好，这时候，我们就想到一个搭建很熟悉的东西–github。<br>&emsp;&emsp;github作为世界上最大的同性交友基地，它除了能为广大男性同胞带来灵魂上的快感，还有一个巨大的作用，那就是可以充当一个小型的服务器。</p>
+	  <p>&emsp;&emsp;作为一名合格的程序员，拥有一个自己的个人网站，那想必是非常舒服了。我们可以在里边写写技术博客，发发牢骚，记录自己的生活。当然，我们可以在博客园，掘金的博客网站发表，但是那毕竟是人家的东西，我们应该试着搭建一个自己的博客。但是，做网站就要买服务器，买服务器就要花钱，这对于我们这帮屌丝程序员来说当然是不太友好，这时候，我们就想到一个搭建很熟悉的东西–github。<br>&emsp;&emsp;github作为世界上最大的同性交友基地，它除了能为广大男性同胞带来灵魂上的快感，还有一个巨大的作用，那就是可以充当一个小型的服务器。</p>
 <p>&emsp;&emsp;<strong>使用gitlab搭建个人博客的好处非常多，比如：</strong></p>
 <ol>
 <li>访问速度快，仓库里只需放打包好的静态页面</li>
@@ -217,12 +229,13 @@ git config --global user.email &quot;githab注册用的邮箱&quot;</code></pre>
 <p>到现在为止基本的部署的工作都做完了，接下来94要看看我们如何写博客了</p>
 <h1 id="发布博客"><a href="#发布博客" class="headerlink" title="发布博客"></a>发布博客</h1><p>发布博客很简单，命令行输入</p>
 <pre><code>hexo new &#39;博客名称&#39;</code></pre><p>完成后hexo会在【source】中的【_posts】文件生成一个<code>mardown</code>文件，在里边编辑博客就可以了</p>
-<p>mardown文件头部可以添加的属性说明</p>
+<p>mardown文件头部部分可以添加的属性说明</p>
 <pre><code>- title----------博客名称
 - date-----------发布日期
 - categories-----分类
 - tags-----------标签
-- preview--------列表页最多展示多少个文字</code></pre><p>如果你想修改默模板可以去【scaffolds】文件夹下修改<code>post.md</code>文件</p>
+- preview--------列表页最多展示多少个文字
+- toc------------是否添加目录结构</code></pre><p>如果你想修改默模板可以去【scaffolds】文件夹下修改<code>post.md</code>文件</p>
 <h1 id="hexo-命令汇总"><a href="#hexo-命令汇总" class="headerlink" title="hexo 命令汇总"></a>hexo 命令汇总</h1><h4 id="1-基本命令"><a href="#1-基本命令" class="headerlink" title="(1)基本命令"></a>(1)基本命令</h4><table>
 <thead>
 <tr>
@@ -358,7 +371,9 @@ new Valine({
   guest_info: nick,mail # 默认留言框的头部需要访问者输入的信息
   pageSize: 10 # pagination size #默认单页的留言条数</code></pre><p>最后执行<code>hexo d -g</code>打包部署，访问域名应该就可以了</p>
 <p><img src="https://img-blog.csdnimg.cn/20200430115425744.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70" alt="image"></p>
-<p>好了，到现在可以拿着自己的网站出去装逼了，其实还有很多功能，只不过我现在没有研究，比如<code>相册</code>，<code>音乐播放器</code>等，等我以后有时间弄出来之后再分享给大家，我把我搭建的博客代码仓库地址也上传到了我的github中<a href="https://github.com/qisi007/website-code-save">传送门</a>；</p>
+<p>好了，到现在可以拿着自己的网站出去装逼了，其实还有很多功能，只不过我现在没有研究，比如<code>相册</code>，<code>音乐播放器</code>等，等我以后有时间弄出来之后再分享给大家。</p>
+<p>我把我搭建的博客代码仓库地址也上传到了我的github中<a href="https://github.com/qisi007/website-code-save">传送门</a>；</p>
+<p><a href="https://www.liuguisheng.vip/" target="_blank" rel="noopener">我的个人主页地址</a></p>
 <p>最后感谢下边博客的博主提供的帮助，小心心送上❤❤；</p>
 <p>感谢:</p>
 <p><a href="https://zhuanlan.zhihu.com/p/28321740" target="_blank" rel="noopener">三分钟在GitHub上搭建个人博客</a></p>
@@ -400,12 +415,12 @@ new Valine({
     verify:true, 
     appId: 'ujj7HTnVMfHWWTTQXQ3wsoOB-gzGzoHsz',
     appKey: '2EluivF387y5A1TdMfPDYEHf',
-    placeholder: '2EluivF387y5A1TdMfPDYEHf',
+    placeholder: '留个联系方式再走呗，你若不勇敢，你怎么知道咱们合不合适？',
     path:window.location.pathname, 
     avatar:'mm' 
 });
 </script>
-<!-- <script>
+<script>
     function loadJs(src, callback) {
         const sc = document.createElement('script');
         sc.type = 'text/javascript';
@@ -452,7 +467,7 @@ new Valine({
             }
         }
     });
-</script> -->
+</script>
 		</section>
 	
 	</div> <!-- col-md-9/col-md-12 -->
@@ -495,7 +510,7 @@ new Valine({
 		
 
 	<!-- toc -->
-	<div class="meta-widget">
+	<div class="meta-widget" id="toc-wrap">
 	
 	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
 	   <div id="toc" class="toc collapse in">
@@ -508,6 +523,27 @@ new Valine({
     <hr>
 	
 </div><!-- col-md-3 -->
+<script>
+	let mate = document.querySelector('#toc-wrap');
+	let flag = true;
+	let setClass = function () {
+		let scrollHeight = document.documentElement.scrollTop
+		let offsetTop = mate.offsetTop;
+		(offsetTop - scrollHeight < 0) ? mate.classList.add('toc-fixed') : mate.classList.remove('toc-fixed');
+	}
+	document.addEventListener('scroll', setClass)	
+	
+</script>
+
+<style>
+	.toc-fixed {
+		position: fixed;
+		top: 150px;
+		width: auto;
+		transition: all .5s;
+		z-index: 999;
+	}
+</style>
 
 	</div>
 		

@@ -13,6 +13,12 @@ menu:
 
   - title: 标签
     url: tags
+
+  - title: 歌单
+    url: music
+  
+  - title: 关于我
+    url: about
   
   # - title: 相册
   #   url: galleries
@@ -73,3 +79,13 @@ valine:
   avatar: mm # 默认头像
   guest_info: nick,mail # 默认留言框的头部需要访问者输入的信息
   pageSize: 10 # pagination size #默认单页的留言条数
+
+leancloud_visitors:
+  enable: true
+  app_id: ujj7HTnVMfHWWTTQXQ3wsoOB-gzGzoHsz
+  app_key: 2EluivF387y5A1TdMfPDYEHf
+
+post_wordcount:
+  item_text: true
+  wordcount: true
+  min2read: true
