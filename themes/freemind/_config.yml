@@ -38,13 +38,17 @@ menu:
   #   # icon: "fa fa-user"
 
 links:
-  - title: "My Github"
+  - title: "Github"
     url: https://github.com/qisi007
     icon: "fa fa-github"
 
   - title: "博客园"
     url: https://www.cnblogs.com/qisi007/
     icon: "fa fa-user"
+
+  - title: "千家找房"
+    url: https://www.allqj.com/
+    icon: "fa fa-home"
 
 widgets:
 - search

@@ -18,3 +18,19 @@
 
 
 图标更换地址： https://www.bootcss.com/p/font-awesome/#
+
+
+## 错误处理
+
+#### 1. 
+```
+fatal: in unpopulated submodule '.deploy_git'
+FATAL Something's wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html
+Error: Spawn failed
+    at ChildProcess.<anonymous> (D:\100-github\website-code-save\node_modules\hexo-util\lib\spawn.js:51:21)
+    at ChildProcess.emit (events.js:315:20)
+    at ChildProcess.cp.emit (D:\100-github\website-code-save\node_modules\cross-spawn\lib\enoent.js:34:29)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:275:12)
+```
+
+#### 解决办法: 删除```.deploy_git```，重新打包上传部署。
