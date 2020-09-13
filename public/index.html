@@ -142,6 +142,40 @@ var _hmt = _hmt || [];
 <div class="row">
 	<div class="col-md-8">
 		<h3 class="title">
+			<a href="/2020/09/13/vue大型项目高性能优化-想说爱你真的不容易/" >vue大型项目高性能优化</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2020-09-13  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<h2 id="一、背景"><a href="#一、背景" class="headerlink" title="一、背景"></a>一、背景</h2><p>&emsp;&emsp;目前公司的<code>电子合同</code>采用<code>表单设计器</code>+<code>合同业务</code>配合实现，做了半年多后终于上线，但是下边员工普遍反映卡顿，甚至卡死，爆栈。尤其是新增和修改合同页面，因为这部分数据量大，逻辑复杂，很容易崩溃，所以决定进行性能优化。</p>
+<h2 id="二、业务场景介绍"><a href="#二、业务场景介绍" class="headerlink" title="二、业务场景介绍"></a>二、业务场景介绍</h2><p>&emsp;&emsp;先来了解一下我们是怎么实现：</p>
+<p>&emsp;&emsp;1. 因为我们公司合同变换频繁，条款之间还有逻辑，所以做了个<code>基础服务</code>（说白了就是组件库），为合同提供模板</p>
+<p>&emsp;&emsp;2. 表单设计器作为基础服务，打包成了组件库，嵌入到合同项目，包括合同生成组件（拖拽生成合同模板）和合同预览组件（加载数据库中的合同模板数据）</p>
+<p>&emsp;&emsp;3. 合同项目有一个模块管理页面，可以对多个模板进行维护，比如可以选择启用哪个模板。</p>
+<p>&emsp;&emsp;4. 合同的管理员负责维护模板，可以用表单设计器拖拽生成合同模板，提交后落入数据库，每个合同类型可以同时启用一个模板。</p>
+<p>&emsp;&emsp;5. 最终下边员工用的就是启用的模板（尤其是这部门卡顿） </p>
+<p><strong>下面是电子合同的宏观泳道图：</strong><br><img src="https://img-blog.csdnimg.cn/20200216200900531.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70" alt="image"></p>
+	
+	</div>
+  <a type="button" href="/2020/09/13/vue大型项目高性能优化-想说爱你真的不容易/#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
 			<a href="/2020/01/09/程序员标配-使用hexo-github搭建个人博客/" >程序员标配--使用hexo+github搭建个人博客</a>
 		</h3>
 		</div>
@@ -218,7 +252,7 @@ var _hmt = _hmt || [];
 		<h4>分类</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/categories/个人博客/">个人博客<span>1</span></a></li>
+			<li><a href="/categories/个人博客/">个人博客<span>2</span></a></li>
 		
 		</ul>
 	</div>
@@ -229,7 +263,15 @@ var _hmt = _hmt || [];
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
+			<li><a href="/tags/前端性能优化/">前端性能优化<span>1</span></a></li>
+		
+			<li><a href="/tags/vue/">vue<span>1</span></a></li>
+		
+			<li><a href="/tags/vue性能优化/">vue性能优化<span>1</span></a></li>
+		
 			<li><a href="/tags/github/">github<span>1</span></a></li>
+		
+			<li><a href="/tags/性能优化/">性能优化<span>1</span></a></li>
 		
 			<li><a href="/tags/hexo/">hexo<span>1</span></a></li>
 		
@@ -243,6 +285,10 @@ var _hmt = _hmt || [];
 <div class="widget">
   <h4>最新文章</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2020/09/13/vue大型项目高性能优化-想说爱你真的不容易/" ><i class="fa fa-file-o"></i>vue大型项目高性能优化</a>
+      </li>
     
       <li>
         <a href="/2020/01/09/程序员标配-使用hexo-github搭建个人博客/" ><i class="fa fa-file-o"></i>程序员标配--使用hexo+github搭建个人博客</a>
