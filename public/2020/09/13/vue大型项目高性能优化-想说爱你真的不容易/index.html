@@ -266,6 +266,7 @@ export default {
 <p>&emsp;&emsp; 我们还可以优化一下表单设计器的代码，把闭包换个实现方式，应该也能提高加载速度，后续会做这些。</p>
 <p>&emsp;&emsp; 合同业务项目也优化了一些接口，代码，前后端交互方式，以及页面的交互方式提高了性能和视觉效果。</p>
 <h2 id="七、总结"><a href="#七、总结" class="headerlink" title="七、总结"></a>七、总结</h2><p>&emsp;&emsp; 这是我第一次费这么大劲做vue项目的性能优化，虽然坎坷，但也留下了好结果，我们从最初加载需要50秒甚至一分钟，到现在10秒左右就能加载成功，速度提高可近5倍。</p>
+<p>&emsp;&emsp; 整体效果如下：<br><img src="https://qjprod-images.oss-cn-beijing.aliyuncs.com/menuResource/1600564965755?name=111.gif" alt="image"></p>
 <p>&emsp;&emsp; 今日成果，虽数月，但众人拾柴，得以燎原，此非一人之功，谢而不及。</p>
 	  
 	</div>
@@ -300,75 +301,6 @@ export default {
 </section>
 
 
-	
-		<section id="comments" class="comments">
-			<style>
-			.comments{padding:10px;background:#fff}
-			@media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#000}}
-			</style>
-			<div id="comment"></div>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-<script>
-new Valine({
-    el: '#comment' ,
-    notify:true, 
-    verify:true, 
-    appId: 'ujj7HTnVMfHWWTTQXQ3wsoOB-gzGzoHsz',
-    appKey: '2EluivF387y5A1TdMfPDYEHf',
-    placeholder: '留个联系方式再走呗，你若不勇敢，你怎么知道咱们合不合适？',
-    path:window.location.pathname, 
-    avatar:'mm' 
-});
-</script>
-<script>
-    function loadJs(src, callback) {
-        const sc = document.createElement('script');
-        sc.type = 'text/javascript';
-        sc.src = src;
-        if (callback) {
-            if (document.addEventListener) {
-                sc.addEventListener("load", callback, false);
-            } else {
-                sc.onreadystatechange = function () {
-                    if (/loaded|complete/.test(sc.readyState)) {
-                        sc.onreadystatechange = null;
-                        callback();
-                    }
-                };
-            }
-        }
-        document.head.appendChild(sc);
-    }
-</script>
-<script>
-    document.body.addEventListener('click', function (e) {
-        if (e.target.classList.contains('vsubmit')) {
-            const email = document.querySelector('input[type=email]');
-            const nick = document.querySelector('input[name=nick]');
-            const reg = /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/; // 邮箱正则
-            if (email && (!email.value || !nick.value || !reg.test(email.value))) {
-                const str = `<div class="valert txt-center"><div class="vtext">请填写正确的昵称和邮箱！</div></div>`;
-                const vmark = document.querySelector('.vmark');
-                vmark.innerHTML = str;
-                vmark.style.display = 'block';
-
-                setTimeout(function () {
-                    vmark.style.display = 'none';
-                    vmark.innerHTML = '';
-                }, 2500);
-            } else {
-                // 使用server酱通知
-                const href = window.location.href;
-                const host = window.location.host;
-                // hexo主题yilia添加valine评论系统 文章被恶意刷屏，无需通知
-                if (href.indexOf('2018/04/05') === -1) {
-                    loadJs(`https://sc.ftqq.com/SCU94700Te32159dab60781a3c638c9ac6389adf55e9d5dec90aa9.send?text=${host}博客有人留言啦~&desp=文章地址是${href}`);
-                }
-            }
-        }
-    });
-</script>
-		</section>
 	
 	</div> <!-- col-md-9/col-md-12 -->
 		
@@ -452,6 +384,20 @@ new Valine({
 
 
 
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+    owner: 'liuguisheng',
+    repo: 'qisi007.github.io',
+    oauth: {
+        client_id: '3ed6057b4ee48f98653e',
+        client_secret: '05d14cd1c55cb5a3a5dc3130c989688765e7fc28',
+    },
+});
+gitment.render('gitmentContainer');
+</script>
 	</div>
   </div>
   <div class="container-narrow">

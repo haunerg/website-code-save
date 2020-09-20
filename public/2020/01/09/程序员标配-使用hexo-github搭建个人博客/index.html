@@ -412,75 +412,6 @@ new Valine({
 
 
 	
-		<section id="comments" class="comments">
-			<style>
-			.comments{padding:10px;background:#fff}
-			@media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#000}}
-			</style>
-			<div id="comment"></div>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-<script>
-new Valine({
-    el: '#comment' ,
-    notify:true, 
-    verify:true, 
-    appId: 'ujj7HTnVMfHWWTTQXQ3wsoOB-gzGzoHsz',
-    appKey: '2EluivF387y5A1TdMfPDYEHf',
-    placeholder: '留个联系方式再走呗，你若不勇敢，你怎么知道咱们合不合适？',
-    path:window.location.pathname, 
-    avatar:'mm' 
-});
-</script>
-<script>
-    function loadJs(src, callback) {
-        const sc = document.createElement('script');
-        sc.type = 'text/javascript';
-        sc.src = src;
-        if (callback) {
-            if (document.addEventListener) {
-                sc.addEventListener("load", callback, false);
-            } else {
-                sc.onreadystatechange = function () {
-                    if (/loaded|complete/.test(sc.readyState)) {
-                        sc.onreadystatechange = null;
-                        callback();
-                    }
-                };
-            }
-        }
-        document.head.appendChild(sc);
-    }
-</script>
-<script>
-    document.body.addEventListener('click', function (e) {
-        if (e.target.classList.contains('vsubmit')) {
-            const email = document.querySelector('input[type=email]');
-            const nick = document.querySelector('input[name=nick]');
-            const reg = /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/; // 邮箱正则
-            if (email && (!email.value || !nick.value || !reg.test(email.value))) {
-                const str = `<div class="valert txt-center"><div class="vtext">请填写正确的昵称和邮箱！</div></div>`;
-                const vmark = document.querySelector('.vmark');
-                vmark.innerHTML = str;
-                vmark.style.display = 'block';
-
-                setTimeout(function () {
-                    vmark.style.display = 'none';
-                    vmark.innerHTML = '';
-                }, 2500);
-            } else {
-                // 使用server酱通知
-                const href = window.location.href;
-                const host = window.location.host;
-                // hexo主题yilia添加valine评论系统 文章被恶意刷屏，无需通知
-                if (href.indexOf('2018/04/05') === -1) {
-                    loadJs(`https://sc.ftqq.com/SCU94700Te32159dab60781a3c638c9ac6389adf55e9d5dec90aa9.send?text=${host}博客有人留言啦~&desp=文章地址是${href}`);
-                }
-            }
-        }
-    });
-</script>
-		</section>
-	
 	</div> <!-- col-md-9/col-md-12 -->
 		
 	
@@ -563,6 +494,20 @@ new Valine({
 
 
 
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+    owner: 'liuguisheng',
+    repo: 'qisi007.github.io',
+    oauth: {
+        client_id: '3ed6057b4ee48f98653e',
+        client_secret: '05d14cd1c55cb5a3a5dc3130c989688765e7fc28',
+    },
+});
+gitment.render('gitmentContainer');
+</script>
 	</div>
   </div>
   <div class="container-narrow">

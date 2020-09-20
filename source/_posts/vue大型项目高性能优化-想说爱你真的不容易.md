@@ -212,6 +212,9 @@ export default {
 
 &emsp;&emsp; 这是我第一次费这么大劲做vue项目的性能优化，虽然坎坷，但也留下了好结果，我们从最初加载需要50秒甚至一分钟，到现在10秒左右就能加载成功，速度提高可近5倍。
 
+&emsp;&emsp; 整体效果如下：
+![image](https://qjprod-images.oss-cn-beijing.aliyuncs.com/menuResource/1600564965755?name=111.gif)
+
 &emsp;&emsp; 今日成果，虽数月，但众人拾柴，得以燎原，此非一人之功，谢而不及。
 
 
