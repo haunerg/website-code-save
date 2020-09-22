@@ -9,25 +9,7 @@
   <title>程序员标配--使用hexo+github搭建个人博客 | 刘贵生的博客</title>
   <meta name="author" content="刘贵生">
   
-  <meta name="description" content="&amp;emsp;&amp;emsp;作为一名合格的程序员，拥有一个自己的个人网站，那想必是非常舒服了。我们可以在里边写写技术博客，发发牢骚，记录自己的生活。当然，我们可以在博客园，掘金的博客网站发表，但是那毕竟是人家的东西，我们应该试着搭建一个自己的博客。但是，做网站就要买服务器，买服务器就要花钱，这对于我们这帮屌丝程序员来说当然是不太友好，这时候，我们就想到一个搭建很熟悉的东西–github。&amp;emsp;&amp;emsp;github作为世界上最大的同性交友基地，它除了能为广大男性同胞带来灵魂上的快感，还有一个巨大的作用，那就是可以充当一个小型的服务器。
-&amp;emsp;&amp;emsp;使用gitlab搭建个人博客的好处非常多，比如：
-
-访问速度快，仓库里只需放打包好的静态页面
-构建快，代码push到远程仓库后，分分钟构建完
-免费（当然这是最大的好处）
-易于管理，这得益于github超强的代码管理能力，比如分支，版本回退等
-可以绑定自己的域名
-
-&amp;emsp;&amp;emsp;常见的博客生成工具有两种，一个是hexo,另一个是jekyll。两者其实大同小异，但是jekyll语法和配置相对于复杂，它需要ruby环境。而hexo就比较简单易上手，只需要node环境就ok了。下面我们进入正题，详细介绍如何使用hexo+github搭建个人博客。
-准备工作
-首先你得有一个github账号吧，注册过程这里不做过多介绍了。注册账号点这里
-配置node环境,根据系统下载好node安装包，一路下一步安装就ok了。node下载
-shell工具，这个可以自行选择，比如cmd，powerShell,git等，建议使用git
-如果你想要自己的域名，可以花钱去申请一个，一般点的域名也不是太贵，一年几十块钱，其实这点钱对于程序员也不算什么，少买件格子衫就有了。
-
-&amp;emsp;&amp;emsp;好了，基本的准备工作就这些了,下面真的要进入正题了。
-安装hexohexo需要全局安装，命令如下：
-npm install -g hexo">
+  <meta name="description" content="个人博客主页,不定期分享一些前端资源。来即是缘,多逛一会儿再走也不迟。">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -200,6 +182,7 @@ var _hmt = _hmt || [];
 <pre><code>hexo g
 hexo s</code></pre><p>也可以使用组合命令</p>
 <pre><code>hexo s -g</code></pre><p>到此为止，主题就更换完了</p>
+<p>本人对<code>freemind.386</code>这个主题进行了二次封装，修改了一些样式，添加评论插件，欢迎star <a href="https://github.com/qisi007/hexo-theme-freemind.386.second">github地址</a></p>
 <h1 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h1><p>接下来，我们把生成的静态网页部署到github。</p>
 <h4 id="1-配置ssh"><a href="#1-配置ssh" class="headerlink" title="(1)配置ssh"></a>(1)配置ssh</h4><p>首先，需要配置<code>ssh</code>,在命令行输入</p>
 <pre><code>ssh-keygen -t rsa -C &quot;此处填写你的邮件地址&quot;</code></pre><p>然后疯狂按3次回车就生成好了，我们把生成好的的````ssh```粘贴到github中，命令行输入</p>

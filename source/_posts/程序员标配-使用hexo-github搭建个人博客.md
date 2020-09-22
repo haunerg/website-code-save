@@ -103,6 +103,8 @@ hexo s -g
 
 到此为止，主题就更换完了
 
+本人对```freemind.386```这个主题进行了二次封装，修改了一些样式，添加评论插件，欢迎star [github地址](https://github.com/qisi007/hexo-theme-freemind.386.second)
+
 # 部署
 接下来，我们把生成的静态网页部署到github。
 #### (1)配置ssh
