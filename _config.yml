@@ -122,3 +122,9 @@ search:
   path: search.xml
   field: post
   content: true
+
+# 自动生成sitemap (站点地图)
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
