@@ -296,7 +296,6 @@ export default {
 
 	 -->
 	</div> <!-- col-md-9/col-md-12 -->
-		
 	
 	<div id="side_meta">
 		<div class="col-md-3" id="post_meta"> 
@@ -372,27 +371,27 @@ export default {
 
 	</div>
 		
+</div>
 
-	
-		<div id="gitalk-container"></div>
-		<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+
+
+
+	<div id="gitalk-container"></div>
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://priesttomb.github.io/js/md5.min.js"></script>
 <script type="text/javascript">
-    console.log("地址", location.pathname)
     new Gitalk({
         clientID: '3ed6057b4ee48f98653e',
         clientSecret: '05d14cd1c55cb5a3a5dc3130c989688765e7fc28',
         repo: 'qisi007.github.io',
         owner: 'qisi007',
         admin: 'qisi007',
-        id: location.pathname,
+        id: md5(location.pathname),
         distractionFreeMode: true
     }).render('gitalk-container')
 </script>
-   
-
-</div><!-- row -->
-
 
 
 	</div>

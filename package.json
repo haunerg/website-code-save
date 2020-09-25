@@ -14,6 +14,7 @@
     "version": "4.2.0"
   },
   "dependencies": {
+    "blueimp-md5": "^2.18.0",
     "hexo": "^4.2.0",
     "hexo-auto-excerpt": "^1.1.2",
     "hexo-deployer-git": "^2.1.0",
